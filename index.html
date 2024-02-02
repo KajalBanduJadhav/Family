@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rotate door Animation</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    body {
+      background-color: black;
+      margin: 0; /* Remove default margin */
+    }
+
+    .wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%; /* Adjust the width as needed */
+      max-width: 800px; /* Set a maximum width if necessary */
+      height: 80vh; /* Adjust the height as needed */
+      max-height: 600px; /* Set a maximum height if necessary */
+    }
+
+    .wrapper img {
+      width: 100%; /* Make the image fill the entire wrapper */
+      height: 100%; /* Make the image fill the entire wrapper */
+      object-fit: cover; /* Maintain aspect ratio while covering the entire wrapper */
+    }
+
+    .door, .knob {
+      width: 50%; /* Adjust the width of the doors and knobs as needed */
+      height: 100%; /* Make the doors and knobs fill the entire height of the wrapper */
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background-color: pink; /* Background color for the doors and knobs */
+    }
+
+    #left-door {
+      left: 0;
+    }
+
+    #right-door {
+      right: 0;
+    }
+
+    .knob {
+      width: 20px; /* Adjust the width of the knobs as needed */
+      height: 20px; /* Adjust the height of the knobs as needed */
+      background-color: #555; /* Background color for the knobs */
+      border-radius: 50%; /* Make the knobs circular */
+      top: 50%;
+      transform: translateY(-50%);
+            background-color: red;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var images = [
+        "bappa img.jpg",
+        "MummyBapuPic.jpeg",
+        "RanDadaVahiniPic.jpeg",
+        "ShambhuPic.jpeg",
+        "AkshuDadaVahiniPic.jpg",
+        "ShubhraPic.jpeg",
+        "ChakulyaPic.jpeg",
+        // Add more image URLs as needed
+      ];
+
+      var imgIndex = 0;
+      var imgElement = document.querySelector('.wrapper img');
+
+      setInterval(function() {
+        imgIndex = (imgIndex + 1) % images.length;
+        imgElement.src = images[imgIndex];
+      }, 1000); // Change image every 1000 milliseconds (1 second)
+    });
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <img src="Cricket/Images/bappa_img1.jpg">
+    <div id="left-door" class="door">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div id="left-knob" class="knob"></div>
+    </div>
+    <div id="right-door" class="door">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div id="right-knob" class="knob"></div>
+    </div>
+  </div>
+</body>
+</html>   
